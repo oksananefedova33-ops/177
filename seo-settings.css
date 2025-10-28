@@ -1,0 +1,262 @@
+.seo-settings-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 100000;
+}
+
+.seo-settings-modal.show {
+    display: flex;
+}
+
+.seo-settings-content {
+    background: #0f1622;
+    border: 1px solid #1f2b3b;
+    border-radius: 16px;
+    padding: 24px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.seo-settings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.seo-settings-header h2 {
+    color: #e4eef9;
+    font-size: 20px;
+    margin: 0;
+}
+
+.seo-close {
+    background: transparent;
+    border: none;
+    color: #9fb2c6;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.seo-close:hover {
+    color: #e4eef9;
+}
+
+.seo-form-group {
+    margin-bottom: 16px;
+}
+
+.seo-form-group label {
+    display: block;
+    color: #9fb2c6;
+    font-size: 13px;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.seo-form-group input[type="text"],
+.seo-form-group textarea {
+    width: 100%;
+    background: #0f1723;
+    color: #ffffff;
+    border: 1px solid #2d4263;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.seo-form-group textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.seo-form-group input:focus,
+.seo-form-group textarea:focus {
+    outline: none;
+    border-color: #2ea8ff;
+}
+
+.seo-checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.seo-checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.seo-checkbox-group label {
+    margin: 0;
+    cursor: pointer;
+    color: #e4eef9;
+}
+
+.seo-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.seo-btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid #2a3441;
+    background: #1a2533;
+    color: #e4eef9;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.seo-btn:hover {
+    background: #2a3441;
+}
+
+.seo-btn.primary {
+    background: #2ea8ff;
+    border-color: #1e98ef;
+    color: #ffffff;
+}
+
+.seo-btn.primary:hover {
+    background: #1e98ef;
+}
+
+.seo-hint {
+    color: #6b7280;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.seo-section {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #213247;
+}
+
+.seo-section:last-child {
+    border-bottom: none;
+}
+
+.seo-section h3 {
+    color: #e4eef9;
+    font-size: 16px;
+    margin: 0 0 12px 0;
+}
+/* Загрузка изображений */
+.seo-image-upload {
+    margin-top: 8px;
+}
+
+.seo-image-preview {
+    position: relative;
+    margin-top: 12px;
+    padding: 12px;
+    background: #111925;
+    border: 1px solid #213247;
+    border-radius: 8px;
+    display: none;
+}
+
+.seo-image-preview.show {
+    display: block;
+}
+
+.seo-image-preview img {
+    max-width: 100%;
+    max-height: 200px;
+    display: block;
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+.seo-image-preview-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.seo-image-url {
+    flex: 1;
+    font-size: 12px;
+    color: #6b7280;
+    word-break: break-all;
+}
+
+.seo-btn-delete {
+    padding: 6px 12px;
+    background: #3a1f1f;
+    border: 1px solid #542b2b;
+    color: #ff6464;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.2s;
+}
+
+.seo-btn-delete:hover {
+    background: #542b2b;
+    color: #ff8080;
+}
+
+.seo-upload-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    background: #1a2533;
+    border: 1px solid #2a3441;
+    color: #e4eef9;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.2s;
+}
+
+.seo-upload-btn:hover {
+    background: #2a3441;
+    border-color: #2ea8ff;
+}
+
+.seo-upload-btn input[type="file"] {
+    display: none;
+}
+
+.seo-loading {
+    display: inline-block;
+    margin-left: 8px;
+    color: #2ea8ff;
+    font-size: 12px;
+}
+
+.seo-image-group {
+    margin-bottom: 16px;
+}
+
+.seo-image-label {
+    display: block;
+    color: #9fb2c6;
+    font-size: 13px;
+    margin-bottom: 8px;
+    font-weight: 600;
+}

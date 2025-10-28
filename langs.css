@@ -1,0 +1,81 @@
+/* Цвета в тон админке */
+:root{
+  --admin-accent: #2ea8ff;          /* основной акцент редактора */
+  --admin-accent-rgb: 46, 168, 255;
+}
+
+/* ---------- Modal ---------- */
+.langs-backdrop{
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.35);
+  display:flex; align-items:center; justify-content:center;
+  z-index: 9999;
+}
+.langs-backdrop.hidden{ display:none; }
+.langs-modal{
+  min-width: 420px; max-width: 560px; background:#0f1723; border-radius:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,.4); overflow:hidden; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+.langs-modal__header{ display:flex; align-items:center; justify-content:space-between; padding:12px 16px; border-bottom:1px solid #233446; }
+.langs-modal__title{ font-weight:600; font-size:16px; color:#ffffff; }
+.langs-close{ background:transparent; border:none; font-size:24px; line-height:1; cursor:pointer; color:#9fb2c6; }
+.langs-modal__body{ padding:14px 16px; color:#e8f2ff; }
+.langs-checkall{ display:block; margin-bottom:10px; user-select:none; }
+.langs-list{ display:grid; grid-template-columns: 1fr 1fr; gap:8px 16px; max-height:400px; overflow-y:auto; padding-right:8px; }
+.langs-list::-webkit-scrollbar { width:8px; }
+.langs-list::-webkit-scrollbar-track { background:#0b111a; border-radius:4px; }
+.langs-list::-webkit-scrollbar-thumb { background:#2a3f5f; border-radius:4px; }
+.langs-list::-webkit-scrollbar-thumb:hover { background:#3a5070; }
+.langs-item{ display:flex; align-items:center; gap:8px; user-select:none; }
+.langs-modal__footer{ display:flex; gap:8px; justify-content:flex-end; padding:12px 16px; background:#0e141b; border-top:1px solid #233446; }
+
+/* ---------- Элемент на сцене ---------- */
+.el.langbadge{
+  display:flex; align-items:center; justify-content:flex-start; padding:4px 6px;
+  background: rgba(var(--admin-accent-rgb), 0.12);
+  border:1px dashed rgba(var(--admin-accent-rgb), 0.45);
+  box-sizing: border-box;
+}
+.el.langbadge .langbadge__wrap{ position:relative; }
+
+/* Плашка (кнопка) — акцент + белый текст */
+.el.langbadge .lang-chip{
+  padding:6px 10px; border-radius:10px; border:1px solid var(--admin-accent);
+  background: var(--admin-accent); color:#ffffff;
+  cursor:default; font-size:13px;
+  border: none;
+  outline: none;
+}
+
+/* В редакторе делаем кликабельным */
+#stage .el.langbadge .lang-chip{
+  cursor:pointer;
+}
+
+/* Выпадающий список */
+.el.langbadge .lang-dropdown{
+  position:absolute; top: calc(100% + 6px); left:0;
+  min-width: var(--lang-dd-min, 200px);
+  width: max-content;
+  background:#0f1622; border:1px solid #233446; border-radius:10px;
+  box-shadow:0 8px 24px rgba(0,0,0,.5); padding:8px; display:none;
+  max-height:380px; overflow-y:auto; overflow-x:hidden; z-index:10000; color:#e8f2ff;
+}
+.el.langbadge .lang-dropdown::-webkit-scrollbar { width:8px; }
+.el.langbadge .lang-dropdown::-webkit-scrollbar-track { background:#0b111a; border-radius:4px; }
+.el.langbadge .lang-dropdown::-webkit-scrollbar-thumb { background:#2a3f5f; border-radius:4px; }
+.el.langbadge .lang-dropdown::-webkit-scrollbar-thumb:hover { background:#3a5070; }
+.el.langbadge .lang-dropdown.open{ display:block; }
+.el.langbadge .lang-item{ padding:6px 8px; border-radius:8px; font-size:13px; white-space:nowrap; }
+.el.langbadge .lang-item:hover{ background: rgba(var(--admin-accent-rgb), 0.08); }
+.el.langbadge .lang-empty{ color:#9ca3af; font-size:12px; padding:6px 8px; }
+/* Маленький color picker в модалке "Языки" */
+.langs-color{ display:flex; align-items:center; gap:8px; margin:0 0 8px 0; }
+.langs-color input[type="color"]{
+  width:22px; height:22px; border:none; padding:0; border-radius:50%;
+  background:none; cursor:pointer;
+}
+.langs-color input[type="color"]::-webkit-color-swatch-wrapper{ padding:0; }
+.langs-color input[type="color"]::-webkit-color-swatch{ border:1px solid #233446; border-radius:50%; }
+
+
